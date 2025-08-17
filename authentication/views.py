@@ -8,7 +8,7 @@ def login(request):
         data =  json.loads(request.body)
         print(data.get('email',''))
         return JsonResponse({'success':True}, status = 200)
-    return render(request, 'Login.html')
+    return render(request, 'login.html')
 
 def signup(request):
     return render(request, 'SignUp.html')
