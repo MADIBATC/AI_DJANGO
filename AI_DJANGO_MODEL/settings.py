@@ -7,7 +7,8 @@ SECRET_KEY = 'django-insecure-vaj7h(8777w!4$48n(fuopa4pr+t2$*@dt%6huw0+$d*#275&f
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.1.216'
+    '192.168.1.216',
+    'zimbabwe-land-management-registry.up.railway.app'
 ]
 
 
