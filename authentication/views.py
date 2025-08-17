@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import json
 
+@csrf_exempt
 def login(request):
     if request.method == 'POST':
         data =  json.loads(request.body)
