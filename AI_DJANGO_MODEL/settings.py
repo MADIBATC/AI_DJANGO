@@ -27,6 +27,8 @@ THIRD_PARTY_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
 
+'authentication.models.CustomUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
