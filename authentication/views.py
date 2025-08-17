@@ -1,0 +1,14 @@
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.http.response import JsonResponse
+import json
+
+def login(request):
+    if request.method == 'POST':
+        data =  json.loads(request.body)
+        print(data.get('email',''))
+        return JsonResponse({'success':True}, status = 200)
+    return render(request, 'Login.html')
+
+def signup(request):
+    return render(request, 'SignUp.html')
