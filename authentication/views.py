@@ -13,4 +13,7 @@ def login(request):
     return render(request, 'login.html')
 
 def signup(request):
-    return render(request, 'SignUp.html')
+    if request.method == 'POST':
+        
+        return JsonResponse({'success': True}, status=200)
+    return render(request, 'SignUp.html') 
