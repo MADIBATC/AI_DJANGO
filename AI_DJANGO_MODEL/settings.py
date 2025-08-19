@@ -22,12 +22,14 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'dashboard'
+    'dashboard',
+    'authentication'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
 
-'authentication.models.CustomUser'
+AUTH_USER_MODEL = 'authentication.CustomUser'
+LOGIN_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

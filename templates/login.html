@@ -69,7 +69,7 @@
         </div>
 
         <div id="liveToast" 
-            class="toast hide position-fixed bottom-0 end-0 m-3 shadow-lg rounded-3 w-50" 
+            class="toast hide position-fixed top-0 end-0 m-3 shadow-lg rounded-3 w-50" 
             role="alert" aria-live="assertive" aria-atomic="true">
 
             <div class="toast-header bg-success text-white rounded-3">
@@ -79,15 +79,30 @@
             </div>
         </div>
 
+        <div id="liveToastFail" 
+            class="toast hide position-fixed top-0 end-0 m-3 shadow-lg rounded-3 w-50" 
+            role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-header bg-danger text-white rounded-3">
+                <i class="bi bi-x-circle-fill me-2"></i>
+                <strong class="me-auto">Failed</strong>
+                <button type="button" class="btn-close btn-close-white ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script>  
             const toastEl = document.getElementById('liveToast');
+            const toastElF = document.getElementById('liveToastFail');
             
             const toast = new bootstrap.Toast(toastEl, {
                 delay: 2000
             });
 
+            const toastFail = new bootstrap.Toast(toastElF, {
+                delay: 2000
+            });
 
             function dashboard(){
                 window.location.href = "{% url 'dashboard:dashboard' %}";
@@ -95,8 +110,8 @@
 
             function login(){
                 data = {
-                    email: document.getElementsByName('email').value,
-                    password: document.getElementsByName('password').value
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value
                 };
                 console.log(data);
 
@@ -115,6 +130,8 @@
                     if(data.success){
                         toast.show();
                         dashboard();
+                    }else{
+                        toastFail.show();
                     }
                 })
             }
