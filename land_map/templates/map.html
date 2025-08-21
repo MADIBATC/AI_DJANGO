@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+        #map {
+            height: 50vh;  /* Full viewport height */
+            width: 100%;    /* Full width */
+        }
+    </style>
+
+    <div class="container-fluid">
+        <div id="map" class="rounded-3"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var map = L.map('map').setView([-17.822520932310905, 31.042782016872586], 15);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+        });
+    </script>
+{% endblock %}

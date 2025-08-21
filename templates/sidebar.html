@@ -48,10 +48,10 @@
             min-width: 25px; /* keeps icons aligned */
             text-align: center;
         }
-        {% comment %} .sidebar-btn:hover {
+        /* .sidebar-btn:hover {
             background: #495057;
             border-radius: 5px;
-        } {% endcomment %}
+        } */
 
         /* Hide text when collapsed */
         #sidebar:not(.expanded) .btn-label {
@@ -84,7 +84,7 @@
             </div>
             <div class="d-flex flex-column mt-3">
                 <button class="sidebar-btn ms-2"><i class="bi bi-house"></i> <span class="btn-label">Dashboard</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-map"></i> <span class="btn-label">Land map</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-map"></i> <span class="btn-label">Land map</span></button>
                 <button class="sidebar-btn ms-2"><i class="bi bi-geo-alt"></i> <span class="btn-label">Registry</span></button>
                 <button class="sidebar-btn ms-2"><i class="bi bi-receipt"></i> <span class="btn-label">Transactions</span></button>
                 <button class="sidebar-btn ms-2"><i class="bi bi-exclamation-triangle"></i> <span class="btn-label">Disputes</span></button>
@@ -98,7 +98,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-             document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function () {
                 const sidebarToggle = document.getElementById('sidebarToggle');
                 const sidebar = document.getElementById('sidebar');
                 const content = document.getElementById('content'); // may not exist in this file
@@ -110,6 +110,10 @@
                     }
                 });
             });
+
+            function viewMap(){
+                window.location.href = "{% url 'land_map:map' %}"
+            }
         </script>
 
     </body>

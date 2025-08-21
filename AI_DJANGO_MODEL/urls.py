@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard', include('dashboard.urls'), name='main_dashboard'),
     path('', include('authentication.urls'), name='auth'),
+    path('land-map/', include('land_map.urls'), name='map')
 ]
