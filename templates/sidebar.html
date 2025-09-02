@@ -83,16 +83,16 @@
                 <button class="btn btn-secondary btn-sm" id="sidebarToggle">☰</button>
             </div>
             <div class="d-flex flex-column mt-3">
-                <button class="sidebar-btn ms-2"><i class="bi bi-house"></i> <span class="btn-label">Dashboard</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewDash()"><i class="bi bi-house"></i> <span class="btn-label">Dashboard</span></button>
                 <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-map"></i> <span class="btn-label">Land map</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-geo-alt"></i> <span class="btn-label">Registry</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-receipt"></i> <span class="btn-label">Transactions</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-exclamation-triangle"></i> <span class="btn-label">Disputes</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-clipboard-data"></i> <span class="btn-label">Analytics</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-file-earmark-richtext"></i> <span class="btn-label">Reporting</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-person"></i> <span class="btn-label">Profile</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-gear"></i> <span class="btn-label">Settings</span></button>
-                <button class="sidebar-btn ms-2"><i class="bi bi-question-circle"></i> <span class="btn-label">Help</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-geo-alt"></i> <span class="btn-label">Registry</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-receipt"></i> <span class="btn-label">Transactions</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-exclamation-triangle"></i> <span class="btn-label">Disputes</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-clipboard-data"></i> <span class="btn-label">Analytics</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-file-earmark-richtext"></i> <span class="btn-label">Reporting</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-person"></i> <span class="btn-label">Profile</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-gear"></i> <span class="btn-label">Settings</span></button>
+                <button class="sidebar-btn ms-2" onclick="viewMap()"><i class="bi bi-question-circle"></i> <span class="btn-label">Help</span></button>
             </div>
         </div>
 
@@ -113,6 +113,10 @@
 
             function viewMap(){
                 window.location.href = "{% url 'land_map:map' %}"
+            }
+
+            function viewDash(){
+                window.location.href = "{% url 'dashboard:dashboard' %}"
             }
         </script>
 
