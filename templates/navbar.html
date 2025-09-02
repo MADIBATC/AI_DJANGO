@@ -6,13 +6,21 @@
         <title>Collapsible Sidebar</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        <style>
+            #ZimLogo{
+                height: 40px;
+                width: 40px;
+                object-fit: contain;
+                border-radius: 45%;
+            }
+        </style>
     </head>
     
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-dark bg-dark py-2">
+        <nav class="navbar navbar-dark bg-dark py-0">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">MySite</a>
+                <a class="navbar-brand d-flex align-items-center" href="#"><img src="/static/navbar_images/zimbabwe-country-map.png" id="ZimLogo"><span>Land Registry</span></a>
                 <div class="d-flex justify-content-end align-items-center" id="mainNavbar">    
                     <a class="nav-link text-light fs-6" href="#">{{request.user.role}}</a>
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" 
